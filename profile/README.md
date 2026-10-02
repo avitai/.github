@@ -1,28 +1,24 @@
-# Avitai Bio
+# Avitai
 
-**Synthetic biology, different.**
+**A differentiable, JAX-native foundation for scientific machine learning.**
 
-Avitai Bio is building an AI-driven operating system for synthetic biology: integrating
-multi-scale, multi-species biological data and domain knowledge into predictive cell models.
+The **Avitai stack** is for any field that wants to use AI to model, predict, generate, optimize
+or control physical, biological and chemical systems. It is domain-agnostic by construction:
+differentiable data pipelines, measurement, generative modelling and scientific ML, in JAX and
+Flax NNX, with every stage differentiable end to end and probabilistic-first so an answer arrives
+with a calibrated sense of how much to trust it.
 
-The synthetic-biology workflow is fragmented. A Design-Build-Test-Learn cycle runs across strain
-design tools, pathway databases, notebooks, spreadsheets and a lab information system, with
-little carrying over between turns of the cycle and less between organisms. The aim is to make
-that cycle faster, cheaper, predictive and multi-scale, by maximising what is learned from each
-experiment rather than by running more of them.
+Five foundation libraries, plus two end-to-end applications in domains chosen to be as different
+from each other as possible: a cell, and a self-driving car. The second exists to answer honestly
+whether the foundation really generalises.
 
-The approach is science-backed rather than purely data-driven. Models carry the constraints
-biology actually imposes, including multi-scale process alignment, cell resource allocation,
-experimental limits and species-specific biology, and they are probabilistic-first so an answer
-arrives with a calibrated sense of how much to trust it.
+**Avitai Bio** is the company behind it, and synthetic biology is its domain: integrating
+multi-scale, multi-species biological data and domain knowledge into predictive cell models, so a
+Design-Build-Test-Learn cycle becomes faster, cheaper and more predictive by maximising what each
+experiment teaches rather than by running more of them. That work is the reason the stack exists
+and the hardest test of it; the stack itself is not specific to it.
 
-**What is in this organisation is the foundation layer, not the product.** These are the
-general-purpose libraries that the modelling work is built on: differentiable data pipelines,
-measurement, generative modelling and scientific ML, in JAX and Flax NNX. They are useful on
-their own and in other fields, which is why they are developed in the open. The cell models
-themselves are not here.
-
-Everything in this organisation is MIT, pre-1.0, and actively developed in the open.
+Everything here is MIT, pre-1.0, and actively developed in the open.
 
 ---
 
@@ -109,12 +105,10 @@ pip install substrax calibrax datarax avitai-artifex opifex
   chemistry, atomistic molecular dynamics, and uncertainty quantification, probabilistic-first
   throughout.
 
-## Domain applications
+## Applications
 
-Two repos take the foundation all the way into a finished domain. DiffBio is the one on the path
-to the cell-modelling work; DiffAV is a deliberate test of whether the same substrate holds up
-somewhere completely different, which is a question worth answering out loud rather than
-assuming.
+Two repos take the same libraries all the way into finished domains. They exist to answer one
+question honestly: does the foundation actually generalise?
 
 - **[DiffBio](https://github.com/avitai/DiffBio)** makes a genomics pipeline trainable. Hard
   thresholds, argmax and Smith-Waterman all block gradients, which is why bioinformatics pipelines
@@ -133,10 +127,6 @@ assuming.
 
 Being specific here is more useful than being impressive.
 
-- **The cell models are not here.** The research, dynamics, central-dogma and perturbation
-  modelling the mission describes is not in this organisation, and some of it is early research
-  rather than software. What is public is the foundation those models are built on. Do not read
-  a repository here as an implementation of the mission above.
 - **Pre-1.0.** APIs will change without deprecation cycles. Pin a version if you need stability.
 - **DiffAV is a research scaffold, not a leaderboard entry.** Its trajectory minADE6 is about
   5.6 m, scored with JAX-native proxies for the WOSAC metrics rather than the official
